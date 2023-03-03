@@ -1,5 +1,8 @@
+// Array of messages to randomly selected from.
+   const message = ['Enjoy the Quote of the Day! ', 'This is one of my favorite quotes! ', 'Here is a random quote about developing. ', 'Here is a random quote from "Eloquent JavaScript". '];
 
-    const quotes = [
+// Array of Quotes and Authors to randomly select a quote from.   
+   const quotes = [
     {
         quote: "We think we are creating the sytem for our own purposes. We believe we are making it in our own image... But the computer is not really like us. It is a projection of a very slim part of ourselves: that portion devoted to logic, order, rule, and clarity.",
         author: " - Ellen Ullman, Close to the Machine: Technophilia and its Discontents"
@@ -41,10 +44,16 @@
 // console.log(quotes[3].quote);
 // console.log(quotes[3].author);
 
+//Function to randomly generate an intro message to the quote.
+const randomMessage = () => {
+    let arrayIndex = Math.floor(Math.random() * message.length);
+        return(message[arrayIndex]);
+} 
+
 //Function to randomly generate an arrayIndex to use and Return the Quote and Author.
 const randomQuote = () => { 
     let arrayIndex = Math.floor(Math.random() * quotes.length);
         return(quotes[arrayIndex].quote + " " + quotes[arrayIndex].author);
 }
 
-console.log("Enjoy the Quote of the Day! " + randomQuote());
+console.log(randomMessage() + randomQuote());
